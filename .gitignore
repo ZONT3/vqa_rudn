@@ -1,1 +1,13 @@
 .idea
+snap/vqa
+snap/**/*.pth
+data/lxmert/mscoco_minival.json
+data/lxmert/mscoco_nominival.json
+data/lxmert/mscoco_train.json
+data/lxmert/vgnococo.json
+data/mscoco_imgfeat/*.tsv
+data/vqa/minival.json
+data/vqa/nominival.json
+data/vqa/train.json
+data/vqa/test.json
+
