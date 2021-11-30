@@ -49,7 +49,7 @@ class VQADataset:
         # Loading datasets
         self.data = []
         for split in self.splits:
-            self.data.extend(json.load(open("data/vqa/%s.json" % split)))
+            self.data.extend(json.load(open(os.path.join(VQA_DATA_ROOT, "%s.json" % split))))
         print("Load %d data from split(s) %s." % (len(self.data), self.name))
 
         # Convert list to dict (for evaluation)
@@ -59,8 +59,8 @@ class VQADataset:
         }
 
         # Answers
-        self.ans2label = json.load(open("data/vqa/trainval_ans2label.json"))
-        self.label2ans = json.load(open("data/vqa/trainval_label2ans.json"))
+        self.ans2label = json.load(open(os.path.join(VQA_DATA_ROOT, "trainval_ans2label.json")))
+        self.label2ans = json.load(open(os.path.join(VQA_DATA_ROOT, "trainval_label2ans.json")))
         assert len(self.ans2label) == len(self.label2ans)
 
     @property

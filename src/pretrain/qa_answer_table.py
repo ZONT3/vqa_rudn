@@ -2,8 +2,12 @@
 # Copyleft 2019 project LXRT.
 
 import json
+import os
+
 import torch
 
+
+DATA_LXMERT_DIR = 'data/lxmert/'
 
 class AnswerTable:
     ANS_CONVERT = {
@@ -25,7 +29,7 @@ class AnswerTable:
     }
 
     def __init__(self, dsets=None):
-        self.all_ans = json.load(open("data/lxmert/all_ans.json"))
+        self.all_ans = json.load(open(os.path.join(DATA_LXMERT_DIR, "all_ans.json")))
         if dsets is not None:
             dsets = set(dsets)
             # If the answer is used in the dsets
